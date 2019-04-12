@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.4.0.js"></script>
+    <script src="client.js"></script>
+    <title>jQuery Salary Calculator</title>
+</head>
+<body>
+    <div class='container'>
+        <h1 class='jumbotron haytch'>jQuery Salary Calculator</h1>
+
+        <h2>Add Employee</h2>
+        <div class='form-group row'>
+            <div class="col-md-12">
+                <input type="text" placeholder="First Name" class="col-md-2 myInput" id="inputFirstname" />
+                <input type="text" placeholder="Last Name" class="col-md-2 myInput" id="inputLastName" />
+                <input type="text" placeholder="ID" class="col-md-2 myInput" id="inputId" />
+                <input type="text" placeholder="Title" class="col-md-2 myInput" id="jobTitleInput">
+                <input type="text" placeholder="Annual Salary" class="col-md-3 myInput" id="salaryInput">
+            </div>
+            <div class="col-md-12 mt-3">
+                <div class="col-md-9"></div>
+                <button class="btn btn-primary col-md-3 submitButton">Submit</button>
+            </div>
+        </div>
+        <!-- <button class="btn btn-primary col-md-3 submitButton">Submit</button> -->
+        
+        <div class="tableSection">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Annual Salary</th>
+                </thead>
+                <tbody class="tableBody">
+
+                </tbody>
+            </table>
+            <div class='col-md-12'>
+                <div class='col-md-9'></div>
+                <p class='col-md-3 totalMonthly'></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

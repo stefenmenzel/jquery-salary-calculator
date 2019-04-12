@@ -1,0 +1,20 @@
+.haytch{
+    text-align: center;
+    background-color: teal;
+}
+
+.form-inline input{
+    display: inline-block;
+}
+
+.submitButton{
+    float: right;
+}
+
+.myInput{
+    max-width: 19.65%;
+}
+
+.tableSection{
+    margin-top: 20px;
+}
