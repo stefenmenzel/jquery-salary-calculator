@@ -18,3 +18,12 @@
 .tableSection{
     margin-top: 20px;
 }
+
+.totalMonthly{
+    text-align: center;
+    float:right;
+}
+
+.deleteButton{
+    color:red;    
+}

@@ -8,7 +8,7 @@ function doJQuery(){
 function addEventListener(){
     $('.submitButton').on('click', addEmployee);
     $('.tableBody').on('click', '.deleteButton', function(){
-        checkButton(this);
+        doDeleteButton(this);
     });
 }
 
@@ -57,7 +57,8 @@ function checkAllInputs(){
 function appendEmployeeToTable(employee){
     let appendString = $(`<tr><td>${employee.firstName}</td>
         <td>${employee.lastName}</td><td>${employee.id}</td>
-        <td>${employee.jobTitle}</td><td>${employee.salary}</td><td><button class='deleteButton' id='${employee.index}'>delete</button></td></tr>`);
+        <td>${employee.jobTitle}</td><td>$${formatSkrilla(parseFloat(employee.salary))}</td>
+        <td><button class='deleteButton' id='${employee.index}'>X</button></td></tr>`);
     $('.tableBody').append(appendString);
 }
 
@@ -66,7 +67,18 @@ function updateMonthly(){
     for(element of employeeArray){
         totalMonthly += (element.salary/12);
     }
-    $('.totalMonthly').text(`Total Monthly: $${totalMonthly}`);
+    if(totalMonthly > 20000){
+        $('.totalMonthly').css('background-color', 'red');
+    }
+    else{
+        $('.totalMonthly').css('background-color', 'white');
+    }
+    // $('.tableBody').append(`<tr><td></td><td></td><td></td><td><td></td><td><p>Total Monthly: $${totalMonthly.toLocaleString()}</td></tr>`);
+    $('.totalMonthly').text(`Total Monthly: $${formatSkrilla(totalMonthly)}`);
+}
+
+function formatSkrilla(cashWad){
+    return cashWad.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
 }
 
 function clearAllFields(){
@@ -77,7 +89,7 @@ function clearAllFields(){
     $('#salaryInput').val('');
 }
 
-function checkButton(element){
+function doDeleteButton(element){
     console.log('a button was clicked');
     console.log('element: ' + element);
     console.log('element id: ' + typeof(element));
